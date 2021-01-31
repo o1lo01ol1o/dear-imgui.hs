@@ -64,6 +64,10 @@ mainLoop w = do
       False -> return ()
       True  -> putStrLn "Ow!"
 
+  bracket_ (beginCombo "Hello, Combo!" "Foo") endCombo do 
+      selectable "Foo"
+      selectable "Bar"
+
   -- Show the ImGui demo window
   showDemoWindow
 
